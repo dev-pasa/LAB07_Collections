@@ -26,7 +26,7 @@ namespace Collections
             currentIndex++;
         }
 
-        /// <summary>
+         /// <summary>
         /// Remove the card from the deck
         /// </summary>
         /// <param name="card"></param>
