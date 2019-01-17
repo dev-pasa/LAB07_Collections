@@ -44,7 +44,10 @@ namespace Collections
         }
 
 
-
+        /// <summary>
+        /// Print the deck of cards
+        /// </summary>
+        /// <param name="mydeck"></param>
         public static void PrintDeck(Deck<Card> mydeck)
         {
 
@@ -60,7 +63,10 @@ namespace Collections
 
 
 
-
+        /// <summary>
+        /// What is to happen next
+        /// </summary>
+        /// <param name="step"></param>
         public static void NextStep(string step)
         {
             Console.WriteLine();

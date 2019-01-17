@@ -12,6 +12,10 @@ namespace Collections
 
         public int currentIndex = 0;
 
+        /// <summary>
+        /// add card to the deck
+        /// </summary>
+        /// <param name="card"></param>
         public void Add(T card)
         {
             if (currentIndex > Cards.Length - 1)
@@ -22,7 +26,10 @@ namespace Collections
             currentIndex++;
         }
 
-
+        /// <summary>
+        /// Remove the card from the deck
+        /// </summary>
+        /// <param name="card"></param>
         public void Remove(T card)
         {
             for (int i = 0; i < currentIndex; i++)
