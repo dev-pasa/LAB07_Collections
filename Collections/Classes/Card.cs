@@ -18,6 +18,9 @@ namespace Collections
 
     }
 
+    /// <summary>
+    /// create a suit of cards
+    /// </summary>
     public enum Suit
     {
         Spades,
@@ -26,6 +29,9 @@ namespace Collections
         Club
     }
 
+    /// <summary>
+    /// create a enum of values of cards
+    /// </summary>
     public enum Value
     {
         Ace = 1,
