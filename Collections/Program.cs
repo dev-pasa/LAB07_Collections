@@ -145,7 +145,7 @@ namespace Collections
 
             Console.WriteLine();
             Console.WriteLine($"The number of cards in Player 2 deck is {myDeck2.count}");
-            Console.WriteLine("The cards in dealer deck are: ");
+            Console.WriteLine("The cards in dealer deck are: 0");
             PrintDeck(myDeck2);
         }
 
