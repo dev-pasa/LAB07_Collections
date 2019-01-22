@@ -44,7 +44,7 @@ namespace Collections
         Eight,
         Nine,
         Ten,
-        Jack,
+        Jack = 11,
         Queen,
         King
     }
