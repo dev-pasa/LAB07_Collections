@@ -10,7 +10,7 @@ namespace Collections
     {
         T[] Cards = new T[5];
 
-        public int currentIndex = 0;
+        public int count = 0;
 
         /// <summary>
         /// add card to the deck
@@ -18,33 +18,79 @@ namespace Collections
         /// <param name="card"></param>
         public void Add(T card)
         {
-            if (currentIndex > Cards.Length - 1)
+            if (count == Cards.Length)
             {
                 Array.Resize(ref Cards, Cards.Length * 2);
             }
-            Cards[currentIndex] = card;
-            currentIndex++;
+            Cards[count] = card;
+            count++;
         }
 
-         /// <summary>
+        /// <summary>
         /// Remove the card from the deck
         /// </summary>
         /// <param name="card"></param>
-        public void Remove(T card)
+        //public void Remove(T card)
+        //{
+        //    for (int i = 0; i < count; i++)
+        //    {
+        //        if (Cards[i].Equals(card))
+        //        {
+        //            for (int j = i; j < count - i - 1; j++)
+        //            {
+        //                Cards[j] = Cards[j + 1];
+        //            }
+        //            count--;
+        //        }
+        //    }
+        //}
+
+        /// <summary>
+        /// Remove the card from the deck
+        /// </summary>
+        /// <param name="card"></param>
+        public void Remove(T item)
         {
-            for (int i = 0; i < currentIndex; i++)
+            T[] temp = new T[(count - 1)];
+            int tempcount = 0;
+
+            foreach (T card in Cards)
             {
-                if (Cards[i].Equals(card))
+                if (card != null)
                 {
-                    for (int j = i; j < currentIndex - i - 1; j++)
+                    if (!card.Equals(item))
                     {
-                        Cards[j] = Cards[j + 1];
+                        temp[tempcount] = card;
+                        tempcount++;
                     }
-                    currentIndex--;
                 }
+
             }
+
+            Cards = temp;
+            count--;
         }
 
+        //Amanda's code
+        //public void Remove(T item)
+        //{
+        //    T[] temp = new T[(count - 1)];
+        //    int tempcount = 0;
+
+        //    foreach(T card in cards)
+        //    {
+        //        if(card != null)
+        //        {
+        //            if (!card.Equals(item))
+        //            {
+        //                temp[tempcount] = card;
+        //                tempcount++;
+        //            }
+        //        }
+        //    }
+        //    Cards = temp;
+        //    count--;
+        //}
 
         public IEnumerator<T> GetEnumerator()
         {
@@ -52,7 +98,7 @@ namespace Collections
             //yield return internalItems[0];
             //yield return internalItems[2];
 
-            for (int i = 0; i < currentIndex; i++)
+            for (int i = 0; i < count; i++)
             {
                 yield return Cards[i];
             }
